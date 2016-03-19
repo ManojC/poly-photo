@@ -1,0 +1,30 @@
+{
+  "name": "public",
+  "homepage": "https://github.com/manojc/poly-photo",
+  "authors": [
+    "Manoj Chalode <chalodem@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.2",
+    "polymer": "^1.4.0",
+    "jgallery": "jakubkowalczyk-pl/jgallery#^1.5.5",
+    "m-photo-gallery": "manojc/polymer-photo-gallery"
+  },
+  "resolutions": {
+    "jquery": "2.0.3"
+  }
+}
