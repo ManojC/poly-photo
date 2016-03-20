@@ -1,0 +1,113 @@
+<link rel="import" href="../polymer/polymer.html" />
+<link rel="stylesheet" href="../jgallery/dist/css/font-awesome.min.css" />
+<link rel="stylesheet" href="../jgallery/dist/css/jgallery.min.css?v=1.5.0" />
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../jgallery/dist/js/jgallery.min.js"></script>
+<script src="../jgallery/dist/js/touchswipe.min.js"></script>
+<dom-module id="m-photo-gallery">
+    <template>
+        <style>
+
+        </style>
+        <audio id="backgroundMusic" src="[[soundTrack]]" autoplay=[[isMusicOn]] loop="loop"></audio>
+        <div id="gallery">
+            <div class="album" data-jgallery-album-title="Album 1">
+                <template id="imageList" is="dom-repeat" items="[[imageData]]">
+                    <a href="[[item.url]]">
+                        <img src="[[item.thumb]]" alt="[[item.alt]]" />
+                    </a>
+                </template>
+            </div>
+        </div>
+    </template>
+</dom-module>
+<script>
+Polymer({
+
+    is: 'm-photo-gallery',
+
+    properties: {
+
+        soundTrack: {
+            type: String,
+            value: 'Yaaron-Dosti-Badi-Hi-Haseen-Hai-Guitar-Instrumental.mp3'
+        },
+
+        isMusicOn: {
+            type: Boolean,
+            value: false
+        },
+
+        musicButton: {
+            type: String,
+            value: ''
+        },
+
+        imageData: {
+            type: Array,
+            value: []
+        },
+
+        autoInit: {
+            type: Boolean,
+            value: false
+        },
+
+        galleryOptions: {
+            type: Object,
+            value: {
+                "transition": "rotateCubeLeftOut_rotateCubeLeftIn",
+                "transitionBackward": "rotateCubeRightOut_rotateCubeRightIn",
+                "transitionCols": "1",
+                "title": true,
+                "transitionRows": "1",
+                "thumbnailsPosition": "bottom",
+                "thumbType": "image",
+                "backgroundColor": "FFFFFF",
+                "textColor": "000000",
+                "mode": "full-screen",
+                "slideshow": true,
+                "slideshowAutostart": true,
+                "slideshowInterval": '4s'
+            }
+        }
+
+    },
+
+    attached: function() {
+        if (this.autoInit)
+            this._initGallery()
+    },
+
+    initGallery: function() {
+
+        if (!this.autoInit)
+            this.$.imageList.render();
+
+        $("#gallery").jGallery(this.galleryOptions);
+
+        this._eventHandlers();
+    },
+
+    _eventHandlers: function() {
+
+        var component = this;
+
+        if (component.musicButton) {
+            $('#' + component.musicButton)
+                .off('click')
+                .click(function(e) {
+                    if (component.isMusicOn == true) {
+                        this.textContent = "Play Music";
+                        component.$.backgroundMusic.pause();
+                    } else {
+                        this.textContent = "Pause Music";
+                        component.$.backgroundMusic.play();
+                    }
+                    component.isMusicOn = !component.isMusicOn;
+                });
+        }
+    }
+
+});
+</script>

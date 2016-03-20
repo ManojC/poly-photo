@@ -1,0 +1,30 @@
+{
+  "name": "m-photo-gallery",
+  "version": "1.0.0",
+  "authors": [
+    "Manoj Chalode <chalodem@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "Polymer",
+    "Web",
+    "Components"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "jquery": "^2.2.2",
+    "jgallery": "jakubkowalczyk-pl/jgallery#^1.5.5"
+  },
+  "devDependencies": {}
+}

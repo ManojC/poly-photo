@@ -1,0 +1,15 @@
+{
+  "name": "jgallery",
+  "homepage": "https://github.com/jakubkowalczyk-pl/jgallery",
+  "version": "1.5.5",
+  "_release": "1.5.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.5.5",
+    "commit": "35de2f850626a436ae8fee5b71bee0c384c149ed"
+  },
+  "_source": "git://github.com/jakubkowalczyk-pl/jgallery.git",
+  "_target": "^1.5.5",
+  "_originalSource": "jakubkowalczyk-pl/jgallery",
+  "_direct": true
+}

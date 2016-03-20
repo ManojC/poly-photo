@@ -1,0 +1,38 @@
+{
+  "name": "m-photo-gallery",
+  "authors": [
+    "Manoj Chalode <chalodem@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "Polymer",
+    "Web",
+    "Components"
+  ],
+  "homepage": "https://github.com/manojc/polymer-photo-gallery",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "jquery": "^2.2.2",
+    "jgallery": "jakubkowalczyk-pl/jgallery#^1.5.5"
+  },
+  "devDependencies": {},
+  "_release": "7063b03ca4",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "7063b03ca4ba62bf08cb0466f20a779d3948b015"
+  },
+  "_source": "git://github.com/manojc/polymer-photo-gallery.git",
+  "_target": "*",
+  "_originalSource": "manojc/polymer-photo-gallery"
+}
