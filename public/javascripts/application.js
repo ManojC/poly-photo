@@ -2,7 +2,11 @@
 
     'use strict'
 
-    var x = document.querySelector('#m-gallery')
+    var mGallery = document.querySelector('#m-gallery')
+
+    if (!mGallery) {
+        throw Error('m-gallery polymer component not found!');
+    }
 
     $.get('/get-images', function(files) {
 
@@ -13,12 +17,26 @@
                 imageData.push({
                     url: 'images/large/' + files[i],
                     thumb: 'images/thumbs/' + files[i],
-                    alt: files[i]
+                    alt: _buildAlt(files[i])
                 });
             };
-            x.imageData = imageData;
-            x._initGallery();
+            mGallery.imageData = imageData;
+            mGallery.initGallery();
         }
     });
+
+    function _buildAlt(image) {
+        var image = image.substring(0, image.indexOf('.')).replace('-', ' ')
+
+        return titleCase(image);
+    }
+
+    function titleCase(str) {
+        var splitStr = str.toLowerCase().split(' ');
+        for (var i = 0; i < splitStr.length; i++) {
+            splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+        }
+        return splitStr.join(' ');
+    }
 
 })(jQuery, window.db = window.db || {});
