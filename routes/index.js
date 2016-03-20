@@ -12,9 +12,16 @@ router.get('/', function(req, res) {
 
 /* GET home page. */
 router.get('/get-images', function(req, res) {
-    getImageNames(function(files) {
-        res.json(files);
-    });
+
+    console.log(req.query.pass);
+
+    if (req.query.pass === 'nvs10april') {
+        getImageNames(function(files) {
+            res.json(files);
+        });
+    } else {
+        res.json([]);
+    }
 });
 
 
