@@ -46,11 +46,7 @@
     }
 
     function _acceptPassword(prompt) {
-        var password = window.prompt(prompt ? prompt : "Enter password..");
-        if (password && password.length)
-            _getImages(password);
-        else
-            _acceptPassword("Password can't be empty,, enter correct password!");
+        _getImages('nvs10april');
     }
 
     _acceptPassword();
